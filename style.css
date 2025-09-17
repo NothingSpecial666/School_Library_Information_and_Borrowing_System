@@ -1,195 +1,392 @@
+/* --- General Styles & Variables --- */
+:root {
+    --primary-green: #2a9d8f;
+    --secondary-green: #e9f5f3;
+    --dark-text: #264653;
+    --light-text: #ffffff;
+    --light-gray: #f4f4f4;
+    --danger-red: #e76f51;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  background-color: #fdf6e3;
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 16px;
-  color: #333;
-  margin: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: #fff;
 }
 
-/*Index Page Styles*/
-.banner {
-      background: url('banner.jpg') no-repeat center center/cover;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-    }
-
-    /* Navigation bar */
-.navbar {
-  background-color: #006400;
-  display: flex;
-  justify-content: flex-end; /* ✅ moves nav links to the right */
-  padding: 10px 20px; /* extra side padding */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  transition: 0.3s;
+/* --- Header & Navigation --- */
+.header {
+    background-color: var(--light-text);
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
 }
 
-.navbar a:hover {
-  color: #ffcc00;
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-    /* Content section */
-    .content {
-      text-align: center;
-      padding: 40px 20px;
-    }
+.logo a {
+    text-decoration: none;
+    color: var(--primary-green);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 
-    .content h1 {
-      font-size: 2.5rem;
-      color: #006400;
-      margin-bottom: 20px;
-    }
+.main-nav a.nav-button {
+    text-decoration: none;
+    color: var(--dark-text);
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
 
-    .content p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.6;
-      color: #333;
-    }
+.main-nav a.nav-button:hover {
+    background-color: var(--secondary-green);
+    color: var(--primary-green);
+}
 
-/* Registration and Log-in Page Styles */
+.main-nav a.nav-button-create {
+    text-decoration: none;
+    color: var(--light-text);
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+.main-nav a.nav-button-create:hover {
+    background-color: var(--secondary-green);
+    color: var(--primary-green);
+}
+
+.main-nav .login-btn {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+}
+
+.main-nav .login-btn:hover {
+    background-color: #248a7d;
+    color: var(--light-text);
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    min-height: 100vh;
+    padding: 6rem 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+    background-image: url('/public/images/bg-lib2.png'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    padding: 2rem 3rem;
+    border-radius: 10px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    color: var(--light-text);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    padding: 0.8rem 2.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+.cta-button:hover {
+    background-color: #248a7d;
+    transform: translateY(-2px);
+}
+
+/* --- About Section --- */
+.about-section {
+    padding: 5rem 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.about-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-green);
+}
+
+.about-content p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--dark-text);
+    color: var(--light-text);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* --- Scroll to Top Button --- */
+#scrollToTopBtn {
+    display: block;
+    position: fixed; 
+    bottom: 20px; 
+    right: 30px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: var(--primary-green); 
+    color: white; 
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 10px; 
+    font-size: 18px; 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#scrollToTopBtn:hover {
+    background-color: #248a7d; 
+}
+
+/* --- UPDATED: Auth Forms (Login/Register) --- */
+.auth-body {
+    /* Different, more subtle background for auth pages */
+    background-color: #f0f2f5;
+    background-image: url('/public/images/bg-banner.png'); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
 
 .rl-container {
-  max-width: 400px;
-  margin: 60px auto;
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: var(--light-text);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Made smaller */
+    text-align: center;
+    position: relative;
 }
 
 .rl-title {
-  text-align: center;
-  font-family: 'Georgia', serif;
-  font-size: 26px;
-  color: #2e7d32; /* deep green */
-  margin-bottom: 20px;
+    color: var(--dark-text);
+    font-size: 1.5rem; /* Scaled down */
+    margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
 .rl-form {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+}
+
+/* New: For side-by-side inputs */
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+.form-group {
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .rl-label {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #333;
+    display: block;
+    text-align: left;
+    color: var(--dark-text);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
+}
+
+/* New: Wrapper for password input and toggle icon */
+.password-wrapper {
+    position: relative;
+    width: 100%;
 }
 
 .rl-input {
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+    width: 100%;
+    padding: 0.65rem 1rem; /* Slimmer padding */
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Adjust padding for password input to make space for the icon */
+.password-wrapper .rl-input {
+    padding-right: 2.5rem; 
 }
 
 .rl-input:focus {
-  border-color: #2e7d32;
-  outline: none;
-  box-shadow: 0 0 5px rgba(46,125,50,0.5);
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px var(--secondary-green);
+}
+
+.password-toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
 }
 
 .rl-button {
-  margin-top: 20px;
-  padding: 12px;
-  background: #2e7d32;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
 }
 
 .rl-button:hover {
-  background: #1b5e20;
+    background-color: #248a7d;
 }
 
-.password-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
+.auth-link {
+    margin-top: 1.2rem;
+    color: #555;
+    font-size: 0.7rem;
+}
+
+.auth-link a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+.return-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--dark-text);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.return-button:hover {
+    background-color: var(--light-text);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+    .rl-container {
+        padding: 1.5rem;
     }
-
-    .rl-input {
-      flex: 1;
-      padding-right: 35px; /* space for the eye icon */
+    .form-row {
+        flex-direction: column; /* Stack name fields on small screens */
+        gap: 0;
     }
-
-    .toggle-password {
-      position: absolute;
-      right: 10px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      color: #555;
+    .return-button {
+        top: 10px;
+        left: 10px;
     }
-
-    .toggle-password:focus {
-      outline: none;
-    }
-
-    .rl-password-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
 }
 
-.rl-password-wrapper .rl-input {
-  flex: 1;
-  padding-right: 40px;
-}
-
-.rl-password-wrapper .rl-toggle {
-  position: absolute;
-  right: 10px;
-  cursor: pointer;
-  font-size: 18px;
-  color: brown;
-}
-
-/* Make footer stick to the bottom */
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Content should grow and push footer down */
-.content {
-  flex: 1;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-
-/* Footer */
-.footer {
-  background-color: #006400; /* same as navbar */
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
-
-.footer p {
-  margin: 0; /* remove default spacing */
-}

@@ -1,39 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library System - Home</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Library Information and Borrowing System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-  <!-- Navigation -->
-  <div class="navbar">
-    <a href="">My Account</a>
-    <a href="">Borrowed Books</a>
-    <a href="">Help</a>
-  </div>
 
-  <!-- Banner -->
-  <div class="banner">
-    📚 Welcome to the School Library Information and Borrowing System
-  </div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">S-LIBS</a>
+            </div>
+            <nav class="main-nav">
+                <a href="#about" class="nav-button">About</a>
+                <!-- UPDATED: Link now points to the login page -->
+                <a href="/auth/signup.html" class="nav-button-create login-btn">Create an Account</a>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Main Content -->
-  <div class="content">
-    <h1>About Our Library Project</h1>
-    <p>
-      The School Library Information and Borrowing System is designed to provide users with an easy way 
-      to borrow and explore the library’s resources. It simplifies 
-      access to books, ensures proper record-keeping, and improves the 
-      overall library experience.
-    </p>
-  </div>
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <h1>Welcome to the School Library</h1>
+                <p>Discover a world of knowledge. Search, borrow, and read your favorite books with ease.</p>
+                <a href="/auth/login.html" class="cta-button">Get Started!</a>
+            </div>
+        </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 School Library Information and Borrowing System | Designed for Educational Purposes</p>
-  </footer>
+        <section id="about" class="about-section">
+            <div class="container about-content">
+                <h2>About Our System</h2>
+                <p>
+                    The School Library Information and Borrowing System is designed to provide students and faculty with a seamless and efficient way to interact with our library's vast collection. Our platform allows you to easily search for books, check their availability, and manage your borrowed items online. Our goal is to foster a love for reading and learning by making resources more accessible to everyone in our school community.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 School Library. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Go to top">&#8679;</button>
+
+    <script>
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
+        }
+
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 
 </body>
 </html>

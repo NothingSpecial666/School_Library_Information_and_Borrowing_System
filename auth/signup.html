@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - S-LIBS</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+
+    <a href="../index.html" class="return-button">← Back</a>
+
+    <div class="rl-container">
+        <h2 class="rl-title">Create Your Account</h2>
+        <form class="rl-form" onsubmit="return checkRegister(event)">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="regGivenName" class="rl-label">Given Name</label>
+                    <input type="text" class="rl-input" id="regGivenName" placeholder="Juan" required>
+                </div>
+                <div class="form-group">
+                    <label for="regLastName" class="rl-label">Last Name</label>
+                    <input type="text" class="rl-input" id="regLastName" placeholder="Dela Cruz" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="regEmail" class="rl-label">Email</label>
+                <input type="email" class="rl-input" id="regEmail" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="regPassword" class="rl-label">Password</label>
+                <div class="password-wrapper">
+                    <input type="password" class="rl-input" id="regPassword" placeholder="Create a strong password" required>
+                    <!-- <i class="fa-solid fa-eye password-toggle-icon" onclick="togglePasswordVisibility('regPassword', this)"></i> -->
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="regConfirm" class="rl-label">Confirm Password</label>
+                <div class="password-wrapper">
+                    <input type="password" class="rl-input" id="regConfirm" placeholder="Confirm your password" required>
+                    <!-- <i class="fa-solid fa-eye password-toggle-icon" onclick="togglePasswordVisibility('regConfirm', this)"></i> -->
+                </div>
+            </div>
+
+            <button type="submit" class="rl-button">Register</button>
+        </form>
+        <p class="auth-link">Already have an account? <a href="login.html">Login instead</a></p>
+    </div>
+
+    <script>
+        function checkRegister(e) {
+            e.preventDefault();
+            // ... your registration logic here ...
+             console.log("Registration attempt");
+            window.location.href = "login.html";
+        }
+
+        // function togglePasswordVisibility(inputId, icon) {
+        //     const passwordInput = document.getElementById(inputId);
+        //     if (passwordInput.type === "password") {
+        //         passwordInput.type = "text";
+        //         icon.classList.remove("fa-eye");
+        //         icon.classList.add("fa-eye-slash");
+        //     } else {
+        //         passwordInput.type = "password";
+        //         icon.classList.remove("fa-eye-slash");
+        //         icon.classList.add("fa-eye");
+        //     }
+        // }
+    </script>
+</body>
+</html>
+

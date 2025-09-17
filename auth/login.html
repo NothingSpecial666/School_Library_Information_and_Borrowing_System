@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login - S-LIBS</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+
+    <a href="../index.html" class="return-button">← Back</a>
+
+    <div class="rl-container">
+        <h2 class="rl-title">User Login</h2>
+        <form class="rl-form" onsubmit="return checkLogin(event)">
+            <label for="loginEmail" class="rl-label">Email:</label>
+            <input type="email" class="rl-input" id="loginEmail" required>
+
+            <label for="loginPassword" class="rl-label">Password:</label>
+            <input type="password" class="rl-input" id="loginPassword" required>
+
+            <button type="submit" class="rl-button">Login</button>
+        </form>
+
+        <!-- <p class="auth-link"><a href="#">Forgot Password?</a></p> -->
+        <p class="auth-link">New here? <a href="signup.html">Register an account</a></p>
+    </div>
+
+    <script>
+        function checkLogin(e) {
+            e.preventDefault();
+            let email = document.getElementById("loginEmail").value;
+            let pass = document.getElementById("loginPassword").value;
+
+            // Simple demo validation (replace with database logic in real apps)
+            if (email && pass) {
+                console.log("Login successful!");
+                // Using a custom modal for user feedback is better than alert()
+                window.location.href = "/home.html"; // Redirect to index after login
+                return true;
+            } else {
+                console.error("Invalid credentials!");
+                // In a real app, you would show an error message in the UI
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
