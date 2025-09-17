@@ -1,0 +1,195 @@
+body {
+  background-color: #fdf6e3;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+/*Index Page Styles*/
+.banner {
+      background: url('banner.jpg') no-repeat center center/cover;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    /* Navigation bar */
+.navbar {
+  background-color: #006400;
+  display: flex;
+  justify-content: flex-end; /* ✅ moves nav links to the right */
+  padding: 10px 20px; /* extra side padding */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+}
+
+    /* Content section */
+    .content {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .content h1 {
+      font-size: 2.5rem;
+      color: #006400;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #333;
+    }
+
+/* Registration and Log-in Page Styles */
+
+.rl-container {
+  max-width: 400px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.rl-title {
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-size: 26px;
+  color: #2e7d32; /* deep green */
+  margin-bottom: 20px;
+}
+
+.rl-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.rl-label {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.rl-input {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.rl-input:focus {
+  border-color: #2e7d32;
+  outline: none;
+  box-shadow: 0 0 5px rgba(46,125,50,0.5);
+}
+
+.rl-button {
+  margin-top: 20px;
+  padding: 12px;
+  background: #2e7d32;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.rl-button:hover {
+  background: #1b5e20;
+}
+
+.password-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .rl-input {
+      flex: 1;
+      padding-right: 35px; /* space for the eye icon */
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .toggle-password:focus {
+      outline: none;
+    }
+
+    .rl-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.rl-password-wrapper .rl-input {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.rl-password-wrapper .rl-toggle {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: brown;
+}
+
+/* Make footer stick to the bottom */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content should grow and push footer down */
+.content {
+  flex: 1;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #006400; /* same as navbar */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.footer p {
+  margin: 0; /* remove default spacing */
+}

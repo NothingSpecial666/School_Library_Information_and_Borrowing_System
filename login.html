@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="rl-container">
+    <h2 class="rl-title">User Login</h2>
+    <form class="rl-form" onsubmit="return checkLogin(event)">
+      <!-- Email -->
+      <label class="rl-label">Email:</label>
+      <input type="email" class="rl-input" id="loginEmail" required>
+
+      <!-- Password -->
+      <label class="rl-label">Password:</label>
+      <input type="password" class="rl-input" id="loginPassword" required>
+
+      <!-- Login Button -->
+      <button type="submit" class="rl-button">Login</button>
+    </form>
+
+    <!-- Forgot password + register links -->
+    <p class="login-link"><a href="forgot-password.html">Forgot Password?</a></p>
+    <p class="login-link">New here? <a href="registration.html">Register</a></p>
+  </div>
+
+  <script>
+    function checkLogin(e) {
+      e.preventDefault();
+      let email = document.getElementById("loginEmail").value;
+      let pass = document.getElementById("loginPassword").value;
+
+      // Simple demo validation (replace with database logic in real apps)
+      if(email && pass) {
+        alert("Login successful!");
+        window.location.href = "index.html"; // ✅ redirect to index after login
+        return true;
+      } else {
+        alert("Invalid credentials!");
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
