@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Login - S-LIBS</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
             if (email && pass) {
                 console.log("Login successful!");
                 // Using a custom modal for user feedback is better than alert()
-                window.location.href = "/home.html"; // Redirect to index after login
+                window.location.href = "../pages/home.html"; // Redirect to index after login
                 return true;
             } else {
                 console.error("Invalid credentials!");

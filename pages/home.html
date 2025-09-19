@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Library Information and Borrowing System</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Home - School Library</title>
+    <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,30 +17,37 @@
                 <a href="#">S-LIBS</a>
             </div>
             <nav class="main-nav">
-                <a href="#about" class="nav-button">About</a>
-                <!-- UPDATED: Path is now relative -->
-                <a href="auth/signup.html" class="nav-button-create login-btn">Create an Account</a>
+                <a href="home.html" class="nav-button active">Home</a>
+                <a href="#" class="nav-button">Books</a>
+                <a href="#" class="nav-button">Account</a>
+                <a href="#" class="nav-button">Help</a>
+                <!-- Logs the user out and redirects to the landing page -->
+                <a href="../index.html" class="nav-button-create login-btn">Logout</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- The background image path is now relative -->
-        <section id="hero" class="hero-section" style="background-image: url('public/images/bg-lib2.png');">
+        <!-- The hero section is reused for the main welcome message -->
+        <section id="hero" class="hero-section" style="background-image: url('../public/images/bg-book.png'); min-height: 80vh;">
             <div class="container hero-content">
-                <h1>Welcome to the School Library</h1>
-                <p>Discover a world of knowledge. Search, borrow, and read your favorite books with ease.</p>
-                <!-- UPDATED: Path is now relative -->
-                <a href="auth/login.html" class="cta-button">Get Started!</a>
+                <h1>Welcome Back, User!</h1>
+                <p>What book are you looking for today?</p>
+                <!-- A simple search form can be added here -->
+                <form onsubmit="event.preventDefault();" style="display: flex; justify-content: center; max-width: 600px; margin: 2rem auto 0;">
+                    <input type="search" placeholder="Search by title, author, or ISBN..." style="width: 100%; padding: 0.8rem 1.5rem; border-radius: 50px 0 0 50px; border: none; font-size: 1rem;">
+                    <button type="submit" class="cta-button" style="border-radius: 0 50px 50px 0;">Search</button>
+                </form>
             </div>
         </section>
 
-        <section id="about" class="about-section">
+        <section id="featured-books" class="about-section">
             <div class="container about-content">
-                <h2>About Our System</h2>
+                <h2>Featured Books</h2>
                 <p>
-                    The School Library Information and Borrowing System is designed to provide students and faculty with a seamless and efficient way to interact with our library's vast collection. Our platform allows you to easily search for books, check their availability, and manage your borrowed items online. Our goal is to foster a love for reading and learning by making resources more accessible to everyone in our school community.
+                    Here are some of the most popular and recently added books in our collection.
                 </p>
+                <!-- You can add book listings or carousels here in the future -->
             </div>
         </section>
     </main>
@@ -78,4 +85,3 @@
 
 </body>
 </html>
-

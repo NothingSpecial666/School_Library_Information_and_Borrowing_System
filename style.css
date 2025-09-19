@@ -106,7 +106,7 @@ body {
     align-items: center;
     justify-content: center;
     color: var(--light-text);
-    background-image: url('/public/images/bg-lib2.png'); 
+    /* background-image: url('/public/images/bg-lib2.png');  */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -126,7 +126,6 @@ body {
 .hero-content {
     position: relative;
     z-index: 2;
-    /* background-color: rgba(0, 0, 0, 0.2); */
     padding: 2rem 3rem;
     border-radius: 10px;
 }
@@ -235,7 +234,7 @@ body {
 .auth-body {
     /* Different, more subtle background for auth pages */
     background-color: #f0f2f5;
-    background-image: url('/public/images/bg-banner.png'); 
+    background-image: url('public/images/bg-banner.png'); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -390,3 +389,8 @@ body {
     }
 }
 
+.main-nav .nav-button.active {
+    color: #2da180; /* A different color to show it's active */
+    font-weight: bold;
+    border-bottom: 2px solid #2da180; /* An underline effect */
+}
